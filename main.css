@@ -1,3 +1,4 @@
+/* can you make my css respoinsve  */
 /* App-wide styling */
 body {
     background-color: #0f1116;
@@ -5,7 +6,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
 }
-
 #hero {
     margin: 0;
     display: flex;
@@ -13,7 +13,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 #links {
     width: 400px;
     text-align: left;
@@ -22,7 +21,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 #links a {
     color: white;
     text-decoration: none;
@@ -32,10 +30,60 @@ body {
     border-radius: 5px;
     padding: 10px;
 }
-
 #links a:hover {
     background-color: #1f1f1f;
     cursor: pointer;
+}
+/* Info Box Styles */
+.info-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.info-box:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.info-arrow {
+    color: white;
+    background-color: #666;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-text {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.info-dots {
+    color: white;
+    background-color: #666;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #header {
@@ -49,79 +97,74 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    max-width: 360px;
 }
-
 .bus-ticket {
-    width: 740px;
+    width: 360px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     border: 1px solid #ccc;
     font-family: monospace;
+    /* margin-top: -4; */
 }
-
 .ticket-header {
     background-color: black;
     color: white;
-    padding: 16px;
+    padding: 0px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .barcode-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 80px;
-    object-fit: contain;
+    max-width: 190rem;
+    width: 40.5rem;
+    height: 5rem;
+    /* max-height: 80px; */
+    /* object-fit: contain; */
 }
-
 .ticket-body {
     background-color: #dbeafe;
-    padding: 16px;
+    padding: 0px;
     color: black;
 }
-
 .name-section, .id-section {
     border-bottom: 1px solid #666;
     padding-bottom: 4px;
     margin-bottom: 8px;
 }
-
 .title-section-special {
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
+        border: 1px solid #7c7d7e;  
+    background-color: #9ba8bd73;
     padding: 8px;
     margin-bottom: 8px;
     border-bottom: 1px solid #666;
 }
-
 .title-inner-blue {
-    background-color: #3b82f6;
     padding: 6px;
     border-radius: 3px;
+    
 }
-
 .monthly-section-no-border, .validity-section-no-border {
     padding-bottom: 4px;
-    margin-bottom: 8px;
+    margin-bottom: -4px;
 }
-
 .name-text {
     font-size: 18px;
     font-weight: bold;
     margin: 0;
 }
-
 .id-text {
     font-size: 16px;
     margin: 0;
 }
-
 .title-text-blue {
     font-size: 16px;
-    color: white;
+    color: rgb(68, 68, 68);
     margin: 0;
     font-weight: bold;
+    letter-spacing: 0px;
 }
 
 .monthly-text {
@@ -129,7 +172,6 @@ body {
     font-weight: bold;
     margin: 0;
 }
-
 .validity-label {
     font-size: 16px;
     margin: 0;
@@ -138,29 +180,42 @@ body {
 .validity-dates-centered {
     text-align: center;
     margin: 8px 0;
+    margin-bottom: -5px;
+    margin-left: 20px;
+}
+
+.validity-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.validity-date-inline {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+    color: #000000;
+    margin-left: 8px;
 }
 
 .date-label {
     font-size: 14px;
     margin: 4px 0;
 }
-
 .date-value {
-    font-size: 58px;
+    font-size: 32px;
     font-family: "DejaVu Sans Mono", "Consolas", "Inconsolata", "Fira Code", monospace;    font-weight: 900;
     margin: 4px 0;
+    /* margin-bottom: 4px; */
 }
-
 .terms-section {
     font-size: 12px;
     line-height: 1.4;
     margin-bottom: 16px;
 }
-
 .terms-section p {
     margin: 0;
 }
-
 .price-container {
     border: 1px solid #4281c1;  
     background-color: #e6f0fa;  
@@ -177,26 +232,20 @@ body {
     font-size: 14px;    
     margin: 0;
 }
-
-
 .price-label {
     font-size: 14px;
     margin: 0;
 }
-
 .price-amount {
     font-size: 20px;
     font-weight: bolder;
     margin: 0;
-
 }
-
 .tax-text-right {
     font-size: 12px;
     text-align: right;
     margin: 0;
 }
-
 .civ-container {
     border: 2px solid #4281c1;
     padding: 8px;
@@ -206,35 +255,29 @@ body {
     align-items: center;
     font-size: 14px;
     margin-bottom: -1px;
-
 }
-
 .civ-text, .timestamp-text {
     margin: 0;
     /* margin-top: 40px; */
     margin: -6;
 }
-
 .logo-container {
     border: 1px solid #666;
     padding: 12px;
     margin-bottom: 16px;
     text-align: left;
 }
-
 .tuke-logo-big {
     padding-top: -80px;
-    height: 150px;
+    height: 25px;
     margin-top: -50px;
-    margin-bottom: -50px;
+    margin-bottom: -10px;
     width: auto;
     /* object-fit: contain; */
 }
-
 .reference-container {
     text-align: right;
 }
-
 .reference-text-right {
     font-size: 12px;
     margin: 0;
