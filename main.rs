@@ -5,7 +5,6 @@ const MAIN_CSS: Asset = asset!("/assets/main.css");
 const HEADER_SVG: Asset = asset!("/assets/header.svg");
 const TUKE_PNG: Asset = asset!("/assets/tuke.png");
 const BARCODE_PNG: Asset = asset!("/assets/barcode.png");
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 fn main() {
     dioxus::launch(App);
@@ -28,6 +27,13 @@ pub fn BusTicket() -> Element {
     rsx! {
         div { class: "bus-ticket",
             
+            // Info box positioned at the top of barcode
+            div { class: "info-box", onclick: |_| println!("Info box clicked!"),
+                div { class: "info-arrow", "←" }
+                div { class: "info-text", "Jegyinformáció" }
+                div { class: "info-dots", "⋯" }
+            }
+            
             div { class: "ticket-header",
                 img { src: BARCODE_PNG, class: "barcode-image", alt: "Barcode" }
             }
@@ -41,10 +47,10 @@ pub fn BusTicket() -> Element {
                 div { class: "id-section",
                     p { class: "id-text", "Ig. szám 024787SE" }
                 }
-                
+
                 div { class: "title-section-special",
                     div { class: "title-inner-blue",
-                        p { class: "title-text-blue", "Pécs havi tanuló bérlet / monthly" }
+                        p { class: "title-text-blue", "Pécs havi tanuló bérlet           ‎ ‎     / ‎ ‎ ‎    monthly" }
                         p { class: "title-text-blue", "pass for students Pécs" }
                     }
                 }
@@ -53,15 +59,16 @@ pub fn BusTicket() -> Element {
                     p { class: "monthly-text", "Havi bérlet" }
                 }
                 
-                div { class: "validity-section-no-border",
-                    span { class: "validity-label", "Érvényes: " }
-                    div { class: "validity-dates-centered",
-                        p { class: "date-label", "from" }
-                        p { class: "date-value", "2025.09.01." }
-                        p { class: "date-label", "to" }
-                        p { class: "date-value", "2025.10.02." }
-                    }
-                }
+              div { class: "validity-section-no-border",
+    div { class: "validity-line",
+        span { class: "validity-label", "Érvényes: " }
+        span { class: "validity-date-inline date-value", "2025.09.01." }
+    }
+    div { class: "validity-dates-centered",
+        p { class: "date-value", "2025.11.05." }
+    }
+}
+
                 
                 div { class: "terms-section",
                     p { "Érvényes a feltűntetett hónap első napján 0 órától az azt követő hónap 2.-én 12 óráig. A bérlet csak érvényes diákigazolvánnyal együtt használható. A bérletet (ha szükséges Tüke kártyát is) ellenőrzéskor fel kell mutatni és az ellenőrzést végző személy kérésére át kell adni. A bérlet az érvényesség megkezdését követően nem visszaváltható. Further details: tukebusz.hu Please show, and hand over your pass if requested by the inspector. For more information about this ticket or pass please visit Tuke Busz's website: www.tukebusz.hu" }
@@ -82,7 +89,7 @@ pub fn BusTicket() -> Element {
                     p { class: "civ-text", "CIV 5594003Q800235142" }
                     p { class: "timestamp-text", "2025.09.01. 11:28" }
                 }
-                
+                    
                 div { class: "logo-container",
                     img { src: TUKE_PNG, class: "tuke-logo-big", alt: "Tüke" }
                 }
