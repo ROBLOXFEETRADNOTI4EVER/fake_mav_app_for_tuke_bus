@@ -1,11 +1,13 @@
-use dioxus::prelude::*;
+use dioxus::{html::img, prelude::*};
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 const HEADER_SVG: Asset = asset!("/assets/header.svg");
 const TUKE_PNG: Asset = asset!("/assets/tuke.png");
 const BARCODE_PNG: Asset = asset!("/assets/barcode.png");
-
+const ARROW_LEFT: Asset = asset!("/assets/arrow-left.svg");
+const THREE_DOTS: Asset = asset!("/assets/three-dots-vertical.svg");
+const ID_IMAGE : Asset = asset!("/assets/spongabob.png");
 fn main() {
     dioxus::launch(App);
 }
@@ -27,30 +29,31 @@ pub fn BusTicket() -> Element {
     rsx! {
         div { class: "bus-ticket",
             
-            // Info box positioned at the top of barcode
             div { class: "info-box", onclick: |_| println!("Info box clicked!"),
-                div { class: "info-arrow", "←" }
+                div { class: "info-arrow", img{src : ARROW_LEFT } }
                 div { class: "info-text", "Jegyinformáció" }
-                div { class: "info-dots", "⋯" }
+                div { class: "info-dots", img{src: THREE_DOTS} }
             }
+
             
+            div {class: "whole_ticket",
             div { class: "ticket-header",
                 img { src: BARCODE_PNG, class: "barcode-image", alt: "Barcode" }
             }
             
-            div { class: "ticket-body",
+            div { class: "ticket-body", 
                 
                 div { class: "name-section",
-                    p { class: "name-text", "Szabo BALAZS (2008.04.30.)" }
+                    p { class: "name-text", "Szabo BALAZS", span {class:"ticket-year", " (2008.04.30.)" } }
                 }
                 
                 div { class: "id-section",
-                    p { class: "id-text", "Ig. szám 024787SE" }
+                    p { class: "id-text", "Ig. szám " , span{class : "id-number", "024787SE"} }
                 }
 
                 div { class: "title-section-special",
                     div { class: "title-inner-blue",
-                        p { class: "title-text-blue", "Pécs havi tanuló bérlet           ‎ ‎     / ‎ ‎ ‎    monthly" }
+                        p { class: "title-text-blue", "Pécs havi tanuló bérlet / monthly" }
                         p { class: "title-text-blue", "pass for students Pécs" }
                     }
                 }
@@ -99,5 +102,22 @@ pub fn BusTicket() -> Element {
                 }
             }
         }
+   div {class: "identificaton" ,
+            img{class: "id_holder", src: ID_IMAGE,}
+            p { class: "id_number", "1072847263" }
+
+            
+          }      
+
+             div {class: "lamp", 
+        p { class:"lamp_text", "I'm a robot" }
+    }   
+     
+        }
+    
+
+
     }
+
+    
 }
