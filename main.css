@@ -1,4 +1,4 @@
-
+/* can you make my css respoinsve  */
 /* App-wide styling */
 body {
     background-color: #0f1116;
@@ -54,7 +54,7 @@ body {
 
 .info-arrow {
     color: white;
-    background-color: #666;
+    /* background-color: #666; */
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -68,14 +68,16 @@ body {
 .info-text {
     color: black;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     flex-grow: 1;
     text-align: center;
+    margin-left: -60px;
+
 }
 
 .info-dots {
     color: white;
-    background-color: #666;
+    /* background-color: #666; */
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -88,6 +90,10 @@ body {
 
 #header {
     max-width: 1200px;
+}
+.ticket-year{
+    font-weight: 200;
+    font-size: 14px;
 }
 
 /* Bus Ticket Styles */
@@ -104,7 +110,11 @@ body {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     border: 1px solid #ccc;
+    height: 90vh;
     font-family: monospace;
+    
+    margin-top: -320px;
+     margin-top: 0;
     /* margin-top: -4; */
 }
 .ticket-header {
@@ -129,9 +139,13 @@ body {
     color: black;
 }
 .name-section, .id-section {
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #4281c1;
+    
     padding-bottom: 4px;
     margin-bottom: 8px;
+    background-color: #5283b413;
+    /* margin-top: -5px; */
+
 }
 .title-section-special {
     /* background-color: #f8f9fa; */
@@ -140,10 +154,14 @@ body {
     padding: 8px;
     margin-bottom: 8px;
     border-bottom: 1px solid #666;
+    text-align: left;
+    margin-left: -15px;
 }
 .title-inner-blue {
     padding: 6px;
     border-radius: 3px;
+    text-align: left;
+    justify-content: left;
     
 }
 .monthly-section-no-border, .validity-section-no-border {
@@ -154,17 +172,28 @@ body {
     font-size: 18px;
     font-weight: bold;
     margin: 0;
+    margin-top: 15px;
+            border-top: 1px solid #4281c1;
+
 }
 .id-text {
     font-size: 16px;
     margin: 0;
+    margin-top: -5px;
+}
+
+.id-number{
+      font-size: 16px;
+    margin: 0;
+    font-weight: bolder;
 }
 .title-text-blue {
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(68, 68, 68);
     margin: 0;
     font-weight: bold;
     letter-spacing: 0px;
+    text-align: left;
 }
 
 .monthly-text {
@@ -181,7 +210,7 @@ body {
     text-align: center;
     margin: 8px 0;
     margin-bottom: -5px;
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 .validity-line {
@@ -207,11 +236,15 @@ body {
     font-family: "DejaVu Sans Mono", "Consolas", "Inconsolata", "Fira Code", monospace;    font-weight: 900;
     margin: 4px 0;
     /* margin-bottom: 4px; */
+    /* margin-left: ; */
 }
 .terms-section {
-    font-size: 12px;
+    display: block;
+    text-align: left;
+    font-size: 9px;
     line-height: 1.4;
     margin-bottom: 16px;
+    padding-left: 2px;
 }
 .terms-section p {
     margin: 0;
@@ -233,16 +266,54 @@ body {
     margin: 0;
 }
 .price-label {
-    font-size: 14px;
+    font-size: 11px;
     margin: 0;
 }
+.whole_ticket{
+    
+  height: 510px;        /* set your desired height */
+  overflow-y: auto;  
+           /* makes vertical scrolling possible */
+  overflow-x: hidden;   /* disables horizontal scroll, only vertical */
+
+
+}
+
+.identificaton{
+    display: flex;    
+    align-items: center;
+      /* flex-direction: row; */
+    /* margin-top: 215px; */
+    background-color: #7dacdb;
+    /* margin-bottom: -200; */
+}   
+.id_holder{
+     width: 150px;
+  height: 150px;
+  border-radius: 90%;       /* Makes it  perfectly round */
+  object-fit: cover;        /* Keeps image aspect */
+  margin-right: 35px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+}
+
+.lamp{
+    background-color: white;
+}
+.id_number{
+      font-size: 1.6rem;
+  font-weight: bold; 
+  color: rgb(110, 110, 110);
+}
 .price-amount {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bolder;
     margin: 0;
 }
 .tax-text-right {
-    font-size: 12px;
+    font-size: 8px;
     text-align: right;
     margin: 0;
 }
